@@ -1,0 +1,13 @@
+---
+title: Delete Agent
+method: DELETE
+endpoint: "/agents/<email>"
+openapi: 'DELETE /agents/<email>'
+docstring_hash: d32c56509f0268a47d48971c7b6cd49c918b415f
+
+parameters:
+  - email <str>
+---
+
+Removes an agent from the team
+This will also update the subscription since it is based on the number of agents!

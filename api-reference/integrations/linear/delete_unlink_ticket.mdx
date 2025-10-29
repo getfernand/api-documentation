@@ -1,0 +1,13 @@
+---
+title: Unlink Ticket
+method: DELETE
+endpoint: "/integrations/linear/<conversation_id>/tickets/<linear_id>"
+openapi: 'DELETE /integrations/linear/<conversation_id>/tickets/<linear_id>'
+docstring_hash: b349c352df874289f37fb9324edf76134524b3ca
+
+parameters:
+  - conversation_id <int>
+  - linear_id <uuid>
+---
+
+Remove the attached Linear ticket for the given conversation

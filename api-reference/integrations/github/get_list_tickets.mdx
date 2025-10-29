@@ -1,0 +1,12 @@
+---
+title: List Tickets
+method: GET
+endpoint: "/integrations/github/<conversation_id>/tickets"
+openapi: 'GET /integrations/github/<conversation_id>/tickets'
+docstring_hash: 666e452f71c0908cb3786704b3444f60ca57b0bc
+
+parameters:
+  - conversation_id <int>
+---
+
+Returns a list of tickets attached to the given conversation_id or an empty array otherwise.
