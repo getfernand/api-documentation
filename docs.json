@@ -18,20 +18,6 @@
     "pages": [
       "api-reference/introduction",
         {
-            "group": "Account",
-            "pages": [
-                "api-reference/account/get_account_details",
-                "api-reference/account/patch_account_update",
-                {
-                    "group": "Account notifications",
-                    "pages": [
-                        "api-reference/account/get_list_notifications",
-                        "api-reference/account/put_update_notifications"
-                    ]
-                }
-            ]
-        },
-        {
             "group": "Agents",
             "pages": [
                 "api-reference/agents/get_listing",
