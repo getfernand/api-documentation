@@ -1,8 +1,35 @@
 ---
-title: Account Update
+title: Update Account
+description: "Update the user's account information"
 method: PATCH
 endpoint: "/account"
-openapi: 'PATCH /account'
-docstring_hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+api: 'PATCH /account'
+docstring_hash: dae517ff690e27ca687caca0428071a701f1dd90
 ---
 
+Allows the authenticated user to update their account information such as email, name, and signature.
+---
+parameters:
+- in: body
+name: account
+description: The account information to update
+schema:
+type: object
+properties:
+email:
+type: string
+format: email
+description: The new email address for the account
+name:
+type: string
+description: The new name for the account
+signature:
+type: string
+description: The new signature for the account (HTML format)
+responses:
+200:
+description: The updated account details
+schema:
+$ref: '#/definitions/Account'
+400:
+description: Invalid input or email already in use

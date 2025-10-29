@@ -1,17 +1,16 @@
 ---
 title: Undo Message
+description: "Possible by the author only, and if the message has not been sent
+No need to check by roles, since we check the author, it mean they had the role to send in the first place"
 method: POST
 endpoint: "/conversations/<id>/messages/<message_id>/undo"
-openapi: 'POST /conversations/<id>/messages/<message_id>/undo'
+api: 'POST /conversations/<id>/messages/<message_id>/undo'
 docstring_hash: 5d6b10ce0f90686f9e9d91f392954d51162cdeb4
 
 parameters:
   - id <int>
   - message_id <str>
 ---
-
-Possible by the author only, and if the message has not been sent
-No need to check by roles, since we check the author, it mean they had the role to send in the first place
 
 If the message is the only one in this conversation, and is out, it means it was a compose.
 In this case, we delete the message and the conversation
