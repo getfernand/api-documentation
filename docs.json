@@ -21,16 +21,16 @@
             "group": "Agents",
             "pages": [
                 "api-reference/agents/get_listing",
-                "api-reference/agents/delete_delete_agent",
                 "api-reference/agents/patch_update_agent",
+                "api-reference/agents/delete_delete_agent",
                 {
                     "group": "Invite",
                     "pages": [
                         "api-reference/agents/invite/get_pending_invite",
                         "api-reference/agents/invite/post_invite",
+                        "api-reference/agents/invite/post_resend_invite",
                         "api-reference/agents/invite/patch_update_invite",
-                        "api-reference/agents/invite/delete_remove_invite",
-                        "api-reference/agents/invite/post_resend_invite"
+                        "api-reference/agents/invite/delete_remove_invite"
                     ]
                 }
             ]
