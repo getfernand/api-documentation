@@ -1,11 +1,10 @@
 ---
-title: Undo Message
-description: "Possible by the author only, and if the message has not been sent
-No need to check by roles, since we check the author, it mean they had the role to send in the first place"
+title: Possible By The Author Only, And If The Message Has Not Been Sent
+description: "No need to check by roles, since we check the author, it mean they had the role to send in the first place"
 method: POST
 endpoint: "/conversations/<id>/messages/<message_id>/undo"
-api: 'POST /conversations/<id>/messages/<message_id>/undo'
-docstring_hash: 5d6b10ce0f90686f9e9d91f392954d51162cdeb4
+api: 'POST /conversations/{id}/messages/{message_id}/undo'
+docstring_hash: 5d6b10ce0f90686f9e9d91f392954d51162cdeb4l
 
 parameters:
   - id <int>
