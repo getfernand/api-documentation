@@ -476,7 +476,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/getfernand"
+      "x": "https://x.com/getfernand",
+      "bluesky": "https://bsky.app/profile/getfernand.com"
     }
   }
 }
