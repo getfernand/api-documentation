@@ -9,9 +9,9 @@
     "eyebrows": "breadcrumbs"
   },
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#00a0ff",
+    "light": "#e8f5ff",
+    "dark": "#00a0ff"
   },
   "favicon": "/favicon.svg",
   "api": {
@@ -25,7 +25,7 @@
   },
   "navigation": {
     "pages": [
-      "api-reference/introduction",
+      "quickstart",
       {
         "group": "Agents",
         "pages": [
@@ -458,7 +458,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Open app",
       "href": "https://app.getfernand.com"
     }
   },
