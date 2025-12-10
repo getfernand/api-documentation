@@ -1,483 +1,74 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
-  "name": "Fernand API Documentation",
-  "interaction": {
-    "drilldown": false
-  },
-  "styling": {
-    "eyebrows": "breadcrumbs"
-  },
-  "colors": {
-    "primary": "#00a0ff",
-    "light": "#e8f5ff",
-    "dark": "#00a0ff"
-  },
-  "favicon": "/favicon.svg",
-  "api": {
-    "mdx": {
-      "server": "https://api.getfernand.com",
-      "auth": {
-        "method": "key",
-        "name": "x-api-key"
-      }
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "almond",
+    "name": "Fernand API Documentation",
+    "interaction": {
+        "drilldown": false
+    },
+    "styling": {
+        "eyebrows": "breadcrumbs"
+    },
+    "colors": {
+        "primary": "#00a0ff",
+        "light": "#e8f5ff",
+        "dark": "#00a0ff"
+    },
+    "favicon": "/favicon.svg",
+    "api": {
+        "mdx": {
+            "server": "https://api.getfernand.com",
+            "auth": {
+                "method": "key",
+                "name": "x-api-key"
+            }
+        }
+    },
+    "navigation": {
+        "pages": [
+            "index",
+            "docs/authentication",
+            "docs/rate-limits",
+            "docs/error-codes",
+            "docs/openapi",
+            {
+                "group": "API Reference",
+                "openapi": "./openapi.json"
+            }
+        ]
+    },
+    "logo": {
+        "light": "/logo/light.svg",
+        "dark": "/logo/dark.svg"
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Support",
+                "href": "mailto:support@getfernand.com"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Open app",
+            "href": "https://app.getfernand.com"
+        }
+    },
+    "contextual": {
+        "options": [
+            "copy",
+            "view",
+            "chatgpt",
+            "claude",
+            "perplexity",
+            "mcp",
+            "cursor",
+            "vscode"
+        ]
+    },
+    "footer": {
+        "socials": {
+            "x": "https://x.com/getfernand",
+            "bluesky": "https://bsky.app/profile/getfernand.com"
+        }
     }
-  },
-  "navigation": {
-    "pages": [
-      "quickstart",
-      {
-        "group": "Agents",
-        "pages": [
-          "api-reference/agents/get_listing",
-          "api-reference/agents/patch_update_agent",
-          "api-reference/agents/delete_delete_agent",
-          {
-            "group": "Invite",
-            "pages": [
-              "api-reference/agents/invite/get_pending_invite",
-              "api-reference/agents/invite/post_invite",
-              "api-reference/agents/invite/post_resend_invite",
-              "api-reference/agents/invite/patch_update_invite",
-              "api-reference/agents/invite/delete_remove_invite"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Contacts",
-        "pages": [
-          "api-reference/contacts/get_search",
-          "api-reference/contacts/patch_update",
-          "api-reference/contacts/get_details",
-          {
-            "group": "Manage payments",
-            "pages": [
-              "api-reference/contacts/post_refund",
-              "api-reference/contacts/delete_downgrade"
-            ]
-          },
-          {
-            "group": "Attach a payment email",
-            "pages": [
-              "api-reference/contacts/post_link_payment",
-              "api-reference/contacts/delete_unlink_payment"
-            ]
-          },
-          {
-            "group": "Suppressed",
-            "pages": [
-              "api-reference/contacts/suppressed/get_list_suppressed",
-              "api-reference/contacts/suppressed/post_add_suppressed",
-              "api-reference/contacts/suppressed/delete_remove_suppressed"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Conversations",
-        "pages": [
-          "api-reference/conversations/get_listing",
-          "api-reference/conversations/get_details",
-          "api-reference/conversations/patch_update_conversation",
-          "api-reference/conversations/delete_delete_conversation",
-          "api-reference/conversations/post_mark_as_spam",
-          "api-reference/conversations/post_split_conversation",
-          "api-reference/conversations/post_conversation_merge",
-          "api-reference/conversations/post_add_note",
-          "api-reference/conversations/delete_delete_note",
-          "api-reference/conversations/patch_update_note",
-          "api-reference/conversations/post_undo_message",
-          "api-reference/conversations/get_get_messages",
-          "api-reference/conversations/delete_delete_message",
-          "api-reference/conversations/delete_conversation_untag",
-          "api-reference/conversations/post_conversation_tag",
-          "api-reference/conversations/get_recipients_list",
-          "api-reference/conversations/post_recipients_add",
-          "api-reference/conversations/delete_recipients_remove",
-          {
-            "group": "Generate",
-            "pages": [
-              "api-reference/conversations/generate/post_generate"
-            ]
-          },
-          {
-            "group": "Status",
-            "pages": [
-              "api-reference/conversations/status/get_inbox_state"
-            ]
-          },
-          {
-            "group": "Bulk",
-            "pages": [
-              "api-reference/conversations/bulk/post_bulk_update_conversation"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Organization",
-        "pages": [
-          "api-reference/organization/get_organization_details",
-          "api-reference/organization/patch_organization_update",
-          {
-            "group": "Invoices",
-            "pages": [
-              "api-reference/organization/invoices/get_invoices"
-            ]
-          },
-          {
-            "group": "Hours",
-            "pages": [
-              "api-reference/organization/hours/post_hours"
-            ]
-          },
-          {
-            "group": "Channels",
-            "pages": [
-              "api-reference/organization/channels/get_channels_listing",
-              "api-reference/organization/channels/post_channels_create",
-              "api-reference/organization/channels/patch_channel_update",
-              "api-reference/organization/channels/delete_channel_delete",
-              "api-reference/organization/channels/get_channel_verify"
-            ]
-          },
-          {
-            "group": "Chat",
-            "pages": [
-              "api-reference/organization/chat/put_chat_update",
-              "api-reference/organization/chat/get_chat_details",
-              {
-                "group": "Regenerate",
-                "pages": [
-                  "api-reference/organization/chat/regenerate/post_chat_regenerate"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Custom Data",
-            "pages": [
-              "api-reference/organization/custom-data/patch_custom_data_update",
-              "api-reference/organization/custom-data/get_custom_data_details",
-              "api-reference/organization/custom-data/delete_custom_data_delete",
-              {
-                "group": "Logs",
-                "pages": [
-                  "api-reference/organization/custom-data/logs/get_logs_listing"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Keys",
-            "pages": [
-              "api-reference/organization/keys/get_api_keys_listing"
-            ]
-          },
-          {
-            "group": "Rag",
-            "pages": [
-              "api-reference/organization/rag/patch_rag_update",
-              "api-reference/organization/rag/get_rag_data",
-              {
-                "group": "Sources",
-                "pages": [
-                  "api-reference/organization/rag/sources/delete_delete_sources",
-                  "api-reference/organization/rag/sources/delete_delete_source",
-                  "api-reference/organization/rag/sources/post_retrain_source",
-                  "api-reference/organization/rag/sources/get_source_content",
-                  {
-                    "group": "Urls",
-                    "pages": [
-                      "api-reference/organization/rag/sources/urls/post_add_source_url",
-                      {
-                        "group": "Stop",
-                        "pages": [
-                          "api-reference/organization/rag/sources/urls/stop/post_stop_source_url"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Questions",
-                    "pages": [
-                      "api-reference/organization/rag/sources/questions/post_add_source_question",
-                      "api-reference/organization/rag/sources/questions/patch_update_source_question",
-                      "api-reference/organization/rag/sources/questions/patch_update_source_question_from_message"
-                    ]
-                  },
-                  {
-                    "group": "Retrain",
-                    "pages": [
-                      "api-reference/organization/rag/sources/retrain/post_retrain_sources"
-                    ]
-                  },
-                  {
-                    "group": "Files",
-                    "pages": [
-                      "api-reference/organization/rag/sources/files/post_add_source_file"
-                    ]
-                  },
-                  {
-                    "group": "Texts",
-                    "pages": [
-                      "api-reference/organization/rag/sources/texts/post_add_source_text",
-                      "api-reference/organization/rag/sources/texts/patch_update_source_text"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Statistics",
-                "pages": [
-                  "api-reference/organization/rag/statistics/get_rag_statistics"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Rules",
-            "pages": [
-              "api-reference/organization/rules/post_add_rule",
-              "api-reference/organization/rules/get_listing",
-              "api-reference/organization/rules/patch_update_rule",
-              "api-reference/organization/rules/delete_remove_rule",
-              "api-reference/organization/rules/post_disable_rule",
-              "api-reference/organization/rules/post_enable_rule"
-            ]
-          },
-          {
-            "group": "Notifications",
-            "pages": [
-              "api-reference/organization/notifications/get_listing"
-            ]
-          },
-          {
-            "group": "Integrations",
-            "pages": [
-              "api-reference/organization/integrations/delete_integrations_revoke"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Snippets",
-        "pages": [
-          "api-reference/snippets/get_listing",
-          "api-reference/snippets/post_snippet_add",
-          "api-reference/snippets/patch_snippet_update",
-          "api-reference/snippets/delete_snippet_remove",
-          "api-reference/snippets/post_snippet_update_categories",
-          {
-            "group": "Categories",
-            "pages": [
-              "api-reference/snippets/categories/get_listing",
-              "api-reference/snippets/categories/post_category_add",
-              "api-reference/snippets/categories/patch_order_categories",
-              "api-reference/snippets/categories/patch_category_update",
-              "api-reference/snippets/categories/get_details",
-              "api-reference/snippets/categories/delete_category_remove"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Tags",
-        "pages": [
-          "api-reference/tags/get_listing",
-          "api-reference/tags/post_tag_add",
-          "api-reference/tags/patch_tag_update",
-          "api-reference/tags/delete_tag_remove"
-        ]
-      },
-      {
-        "group": "Knowledge",
-        "pages": [
-          "api-reference/knowledge/delete_knowledge_delete",
-          "api-reference/knowledge/patch_update_settings",
-          "api-reference/knowledge/get_details",
-          {
-            "group": "Links",
-            "pages": [
-              "api-reference/knowledge/links/post_links_create",
-              "api-reference/knowledge/links/get_links_listing",
-              "api-reference/knowledge/links/delete_links_delete",
-              "api-reference/knowledge/links/patch_links_update"
-            ]
-          },
-          {
-            "group": "Verify",
-            "pages": [
-              "api-reference/knowledge/verify/get_verify_custom_domain"
-            ]
-          },
-          {
-            "group": "Structure",
-            "pages": [
-              "api-reference/knowledge/structure/get_structure"
-            ]
-          },
-          {
-            "group": "Articles",
-            "pages": [
-              "api-reference/knowledge/articles/post_articles_create",
-              "api-reference/knowledge/articles/delete_articles_delete",
-              "api-reference/knowledge/articles/get_articles_details",
-              "api-reference/knowledge/articles/patch_articles_update",
-              "api-reference/knowledge/articles/patch_articles_update_sort",
-              {
-                "group": "Generate",
-                "pages": [
-                  {
-                    "group": "Description",
-                    "pages": [
-                      "api-reference/knowledge/articles/generate/description/post_articles_generate_description"
-                    ]
-                  },
-                  {
-                    "group": "Content",
-                    "pages": [
-                      "api-reference/knowledge/articles/generate/content/post_articles_generate_content"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "From Conversation",
-                "pages": [
-                  "api-reference/knowledge/articles/from-conversation/post_generate_from_conversation"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Collections",
-            "pages": [
-              "api-reference/knowledge/collections/get_collections_listing",
-              "api-reference/knowledge/collections/post_collections_create",
-              "api-reference/knowledge/collections/patch_collections_update",
-              "api-reference/knowledge/collections/delete_collections_delete"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Integrations",
-        "pages": [
-          {
-            "group": "Linear",
-            "pages": [
-              "api-reference/integrations/linear/post_create_tickets",
-              "api-reference/integrations/linear/get_list_tickets",
-              "api-reference/integrations/linear/delete_unlink_ticket",
-              "api-reference/integrations/linear/patch_update_ticket",
-              "api-reference/integrations/linear/put_attach_ticket",
-              {
-                "group": "Properties",
-                "pages": [
-                  "api-reference/integrations/linear/properties/get_linear_properties"
-                ]
-              },
-              {
-                "group": "Search",
-                "pages": [
-                  "api-reference/integrations/linear/search/post_search"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Github",
-            "pages": [
-              "api-reference/integrations/github/get_list_tickets",
-              "api-reference/integrations/github/delete_unlink_ticket",
-              "api-reference/integrations/github/put_attach_ticket",
-              {
-                "group": "Search",
-                "pages": [
-                  "api-reference/integrations/github/search/post_search"
-                ]
-              },
-              {
-                "group": "Properties",
-                "pages": [
-                  "api-reference/integrations/github/properties/get_github_properties"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Reporting",
-        "pages": [
-          {
-            "group": "Knowledge",
-            "pages": [
-              {
-                "group": "Statistics",
-                "pages": [
-                  "api-reference/reporting/knowledge/statistics/get_kb_statistics"
-                ]
-              },
-              {
-                "group": "Searches",
-                "pages": [
-                  "api-reference/reporting/knowledge/searches/get_kb_searches"
-                ]
-              },
-              {
-                "group": "Articles",
-                "pages": [
-                  "api-reference/reporting/knowledge/articles/get_kb_articles"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "General",
-            "pages": [
-              "api-reference/reporting/general/get_general"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@getfernand.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Open app",
-      "href": "https://app.getfernand.com"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/getfernand",
-      "bluesky": "https://bsky.app/profile/getfernand.com"
-    }
-  }
 }
