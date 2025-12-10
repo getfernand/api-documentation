@@ -25,6 +25,13 @@
         "/conversations/{conv_id}/drafts": {
             "post": {
                 "summary": "Create a new draft",
+                "description": "Creates a message draft within the specified conversation, allowing the author and optional target agent to be set by ID or email. The draft includes a title and content, and validates the existence of referenced agents. If agent details are missing or invalid, appropriate errors are returned. The draft is saved and returned upon successful creation.",
+                "x-mint": {
+                    "metadata": {
+                        "description": ""
+                    },
+                    "content": "Creates a message draft within the specified conversation, allowing the author and optional target agent to be set by ID or email. The draft includes a title and content, and validates the existence of referenced agents. If agent details are missing or invalid, appropriate errors are returned. The draft is saved and returned upon successful creation."
+                },
                 "operationId": "createDraft",
                 "tags": [
                     "Conversation Drafts"
@@ -121,7 +128,6 @@
                         }
                     }
                 },
-                "description": "Creates a message draft within the specified conversation, allowing the author and optional target agent to be set by ID or email. The draft includes a title and content, and validates the existence of referenced agents. If agent details are missing or invalid, appropriate errors are returned. The draft is saved and returned upon successful creation.",
                 "x-computed-hash": "5f2d133541cdfce85f7ea6164384fe2baf781e6b79335c945c51a1251c39b954",
                 "x-last-modified": 1765364261
             }
