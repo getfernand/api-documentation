@@ -3,9 +3,41 @@ title: "Authentication"
 mode: "center"
 ---
 
-Authenticate your account by including your **secret API key** in every request.  
-You can create and manage API keys from the integration page at <a href="https://app.getfernand.com" target="_blank">Fernand's Integrations</a>.
+To interact with the knowledge base API, you need to include your API key in every request.
+This is done by passing it in the `X-Api-Key` header.
 
-Send your key using the following HTTP header:
+You can create and manage your keys directly from your Fernand dashboard under **Integrations → API Key**.
 
-`X-API-Key: sk_xxxxxx.....`
+![Integration pages on getfernand.com](/images/integrations.png)
+
+
+## Managing keys
+
+1. Go to **Integrations** in your workspace settings.
+2. Click on **Manage keys** under the **API Key** integration card.
+3. Create a new key if you don’t already have one, or copy an existing key.
+4. Use this key in the `X-Api-Key` header when making API calls.
+
+
+## Best practices
+
+* Keep your keys secret. Do not paste them into public repositories or client-side code.
+* Rotate your keys regularly for added security.
+* If you suspect a leak, revoke the key immediately from this page.
+
+
+## Making a request
+
+Once you have an API key, include it in the header of your request. For example, fetching the full knowledge base structure:
+
+```
+curl -H "X-Api-Key: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \ https://api.getfernand.com/knowledge/structure
+```
+
+Or fetching a single article by its ID:
+
+```
+curl -H "X-Api-Key: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \ https://api.getfernand.com/knowledge/articles/<ARTICLE_ID>
+```
+
+That’s all you need to start authenticating with the Fernand knowledge base API.
