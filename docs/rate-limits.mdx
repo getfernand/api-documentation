@@ -7,7 +7,7 @@ Rate limiting helps ensure fair usage of the Fernand API. Understanding these li
 
 ## Rate limits by account type
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Unauthenticated" icon="ban">
     **2 requests per minute**
     
@@ -17,11 +17,6 @@ Rate limiting helps ensure fair usage of the Fernand API. Understanding these li
     **250 requests per minute**
     
     Authenticated accounts have significantly higher limits.
-  </Card>
-  <Card title="Sandbox mode" icon="flask">
-    **10 requests per minute**
-    
-    Reduced limits apply when using sandbox mode.
   </Card>
 </CardGroup>
 
@@ -44,8 +39,4 @@ Each API response includes three headers to help you monitor your usage:
 <ParamField header="X-RateLimit-Reset" type="Integer">
   Represents a Unix timestamp in seconds indicating when the rate limit will reset.
 </ParamField>
-
-<Callout type="info">
-  **Tip:** Monitor the `X-RateLimit-Remaining` header to implement exponential backoff and avoid hitting rate limits in your application.
-</Callout>
 
