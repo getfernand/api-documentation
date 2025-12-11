@@ -8,24 +8,24 @@ Rate limiting helps ensure fair usage of the Fernand API. Understanding these li
 ## Rate limits by account type
 
 <CardGroup cols={3}>
-  <Card title="Unauthenticated">
+  <Card title="Unauthenticated" icon="ban">
     **2 requests per minute**
     
     Rate limiting is enforced for unauthenticated accounts.
   </Card>
-  <Card title="Authenticated">
+  <Card title="Authenticated" icon="key">
     **250 requests per minute**
     
     Authenticated accounts have significantly higher limits.
   </Card>
-  <Card title="Sandbox mode">
+  <Card title="Sandbox mode" icon="flask">
     **10 requests per minute**
     
     Reduced limits apply when using sandbox mode.
   </Card>
 </CardGroup>
 
-<Callout type="warning">
+<Callout icon="warning" type="warning">
   **Rate limit exceeded:** When you exceed the rate limit, you'll receive an HTTP `429` status code. Monitor the rate limit headers (see below) to avoid hitting this limit.
 </Callout>
 
