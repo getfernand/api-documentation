@@ -1,0 +1,51 @@
+---
+title: "Rate limits"
+mode: "center"
+---
+
+Rate limiting helps ensure fair usage of the Fernand API. Understanding these limits will help you build robust integrations.
+
+## Rate limits by account type
+
+<CardGroup cols={3}>
+  <Card title="Unauthenticated">
+    **2 requests per minute**
+    
+    Rate limiting is enforced for unauthenticated accounts.
+  </Card>
+  <Card title="Authenticated">
+    **250 requests per minute**
+    
+    Authenticated accounts have significantly higher limits.
+  </Card>
+  <Card title="Sandbox mode">
+    **10 requests per minute**
+    
+    Reduced limits apply when using sandbox mode.
+  </Card>
+</CardGroup>
+
+<Callout type="warning">
+  **Rate limit exceeded:** When you exceed the rate limit, you'll receive an HTTP `429` status code. Monitor the rate limit headers (see below) to avoid hitting this limit.
+</Callout>
+
+## Rate limit headers
+
+Each API response includes three headers to help you monitor your usage:
+
+<ParamField header="X-RateLimit-Remaining" type="Integer">
+  Indicates the number of requests remaining before hitting the rate limit.
+</ParamField>
+
+<ParamField header="X-RateLimit-Limit" type="Integer">
+  Indicates the maximum number of requests you can make per minute.
+</ParamField>
+
+<ParamField header="X-RateLimit-Reset" type="Integer">
+  Represents a Unix timestamp in seconds indicating when the rate limit will reset.
+</ParamField>
+
+<Callout type="info">
+  **Tip:** Monitor the `X-RateLimit-Remaining` header to implement exponential backoff and avoid hitting rate limits in your application.
+</Callout>
+

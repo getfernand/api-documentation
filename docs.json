@@ -8,6 +8,9 @@
     "styling": {
         "eyebrows": "breadcrumbs"
     },
+    "custom": {
+        "css": ["/custom.css"]
+    },
     "colors": {
         "primary": "#00a0ff",
         "light": "#e8f5ff",

@@ -3,41 +3,54 @@ title: "Authentication"
 mode: "center"
 ---
 
-To interact with the knowledge base API, you need to include your API key in every request.
-This is done by passing it in the `X-Api-Key` header.
+To interact with the Fernand API, you need to include your API key in every request. This is done by passing it in the `X-Api-Key` header.
 
 You can create and manage your keys directly from your Fernand dashboard under **Integrations → API Key**.
 
-![Integration pages on getfernand.com](/images/integrations.png)
-
+<Frame caption="API Key integration page in the Fernand dashboard">
+  <img src="/images/integrations.png" alt="Fernand API integration and key management" />
+</Frame>
 
 ## Managing keys
 
-1. Go to **Integrations** in your workspace settings.
-2. Click on **Manage keys** under the **API Key** integration card.
-3. Create a new key if you don’t already have one, or copy an existing key.
-4. Use this key in the `X-Api-Key` header when making API calls.
+<Steps>
+  <Step title="Go to Integrations">
+    Navigate to **Integrations** in your workspace settings.
+  </Step>
+  <Step title="Access API Key settings">
+    Click on **Manage keys** under the **API Key** integration card.
+  </Step>
+  <Step title="Create or copy your key">
+    Create a new key if you don't already have one, or copy an existing key.
+  </Step>
+  <Step title="Use your key">
+    Include this key in the `X-Api-Key` header when making API calls.
+  </Step>
+</Steps>
 
-
-## Best practices
-
-* Keep your keys secret. Do not paste them into public repositories or client-side code.
-* Rotate your keys regularly for added security.
-* If you suspect a leak, revoke the key immediately from this page.
-
+<Callout type="warning">
+  **Security best practices:**
+  
+  * Keep your keys secret. Do not paste them into public repositories or client-side code.
+  * Rotate your keys regularly for added security.
+  * If you suspect a leak, revoke the key immediately from the dashboard.
+</Callout>
 
 ## Making a request
 
-Once you have an API key, include it in the header of your request. For example, fetching the full knowledge base structure:
+Once you have an API key, include it in the header of your request. Here are some examples:
 
-```
-curl -H "X-Api-Key: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \ https://api.getfernand.com/knowledge/structure
-```
-
-Or fetching a single article by its ID:
-
-```
-curl -H "X-Api-Key: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \ https://api.getfernand.com/knowledge/articles/<ARTICLE_ID>
-```
-
-That’s all you need to start authenticating with the Fernand knowledge base API.
+<Tabs>
+  <Tab title="Fetching conversations">
+    ```bash
+    curl -H "X-Api-Key: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+      https://api.getfernand.com/conversations
+    ```
+  </Tab>
+  <Tab title="Fetching messages in a conversation">
+    ```bash
+    curl -H "X-Api-Key: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+      https://api.getfernand.com/conversations/<CONVERSATION_ID>/messages
+    ```
+  </Tab>
+</Tabs>
