@@ -3,22 +3,18 @@ title: "Rate limits"
 mode: "center"
 ---
 
-Rate limiting helps ensure fair usage of the Fernand API. Understanding these limits will help you build robust integrations.
+Rate limiting helps ensure fair usage of the Fernand API.
+Understanding these limits will help you build robust integrations.
 
-## Rate limits by account type
+## Rate limits
 
-<CardGroup cols={2}>
-  <Card title="Unauthenticated" icon="ban">
-    **2 requests per minute**
-    
-    Rate limiting is enforced for unauthenticated accounts.
-  </Card>
-  <Card title="Authenticated" icon="key">
-    **250 requests per minute**
-    
-    Authenticated accounts have significantly higher limits.
-  </Card>
-</CardGroup>
+By default, most endpoints are limited by the following restrictions:
+
+ * 20 requests per minutes for accessing read-only endpoints (via the `GET` method)
+ * 5 requests per minutes for accessing write endpoints (`PUT`, `POST`, `PATCH` and `DELETE`)
+
+Some endpoints are different rate limits implemented based on their purpose.
+When this is the case, we indicates how much actions you can perform per minutes on these endpoints.
 
 <Callout icon="warning" type="warning">
   **Rate limit exceeded:** When you exceed the rate limit, you'll receive an HTTP `429` status code. Monitor the rate limit headers (see below) to avoid hitting this limit.

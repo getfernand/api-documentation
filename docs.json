@@ -35,7 +35,15 @@
             "docs/openapi",
             {
                 "group": "API Reference",
-                "openapi": "./openapi.json"
+                "openapi": "./openapi.json",
+                "pages": [
+                    {
+                        "group": "Conversations",
+                        "pages": [
+                            "POST /conversations/{conversation_id}/drafts"
+                        ]
+                    }
+                ]
             }
         ]
     },

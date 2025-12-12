@@ -22,7 +22,7 @@
         }
     ],
     "paths": {
-        "/conversations/{conv_id}/drafts": {
+        "/conversations/{conversation_id}/drafts": {
             "post": {
                 "summary": "Create a new draft",
                 "description": "Creates a message draft within the specified conversation, allowing the author and optional target agent to be set by ID or email. The draft includes a title and content, and validates the existence of referenced agents. If agent details are missing or invalid, appropriate errors are returned. The draft is saved and returned upon successful creation.",
@@ -38,7 +38,7 @@
                 ],
                 "parameters": [
                     {
-                        "name": "conv_id",
+                        "name": "conversation_id",
                         "in": "path",
                         "required": true,
                         "schema": {
