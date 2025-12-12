@@ -24,6 +24,13 @@
                 "method": "key",
                 "name": "x-api-key"
             }
+        },
+        "playground": {
+            "display": "interactive"
+        },
+        "examples": {
+            "languages": ["curl", "python", "javascript", "php", "ruby", "go", "csharp", "java"],
+            "defaults": "required"
         }
     },
     "navigation": {

@@ -206,19 +206,5 @@
     "externalDocs": {
         "description": "You can access our documentation online by visiting https://api.fernand.help",
         "url": "https://api.fernand.help"
-    },
-    "footer": {
-        "socials": {
-        "x": "https://x.com/getfernand"
-        }
-    },
-    "api": {
-        "playground": {
-            "display": "interactive"
-        },
-        "examples": {
-            "languages": ["curl", "python", "javascript", "php", "ruby", "go", "csharp", "java"],
-            "defaults": "required"
-        }
     }
 }
