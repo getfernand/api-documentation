@@ -42,12 +42,269 @@
             "docs/openapi",
             {
                 "group": "API Reference",
-                "openapi": "./openapi.json",
+                "openapi": "https://api.getfernand.com/openapi.json",
                 "pages": [
                     {
                         "group": "Conversations",
                         "pages": [
-                            "POST /conversations/{conversation_id}/drafts"
+                            "GET /conversations",
+                            "POST /conversations/compose",
+
+                            "GET /conversations/{id}",
+                            "POST /conversations/{conv_id}/drafts",
+                            "POST /conversations/{id}/reply",
+
+                            "GET /conversations/{id}/export",
+                            "PATCH /conversations/{id}",
+                            "POST /conversations/bulk",
+                            "POST /conversations/{id}/spam",
+                            "DELETE /conversations/{id}",
+                            {
+                                "group": "Messages",
+                                "pages": [
+                                    "GET /conversations/{id}/messages",
+                                    "DELETE /conversations/{id}/messages/{message_id}"
+                                ]
+                            },
+                            {
+                                "group": "Tags",
+                                "pages": [
+                                    "POST /conversations/{id}/tags",
+                                    "DELETE /conversations/{id}/tags/{tag}"
+                                ]
+                            },
+                            {
+                                "group": "Recipients",
+                                "pages": [
+                                    "GET /conversations/{id}/recipients",
+                                    "POST /conversations/{id}/recipients",
+                                    "DELETE /conversations/{id}/recipients/{email}"
+                                ]
+                            },
+                            {
+                                "group": "Notes",
+                                "pages": [
+                                    "POST /conversations/{id}/notes",
+                                    "PATCH /conversations/{id}/notes/{note_id}",
+                                    "DELETE /conversations/{id}/notes/{note_id}"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "Contacts",
+                        "pages": [
+                            "GET /contacts",
+                            "GET /contacts/{id}",
+                            "PATCH /contacts/{id}",
+                            {
+                                "group": "Suppressed",
+                                "pages": [
+                                    "GET /contacts/suppressed",
+                                    "DELETE /contacts/suppressed/{email}",
+                                    "POST /contacts/suppressed"
+                                ]
+                            },
+                            {
+                                "group": "Payment link",
+                                "pages": [
+                                    "POST /contacts/{id}/payment-email",
+                                    "DELETE /contacts/{id}/payment-email"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "Tags",
+                        "pages": [
+                            "GET /tags",
+                            "POST /tags",
+                            "PATCH /tags/{slug}",
+                            "DELETE /tags/{slug}"
+                        ]
+                    },
+                    {
+                        "group": "Integrations",
+                        "pages": [
+                            {
+                                "group": "Linear",
+                                "pages": [
+                                    "GET /integrations/linear/properties",
+                                    "POST /integrations/linear/search",
+
+                                    "PUT /integrations/linear/{conversation_id}/tickets/{linear_id}",
+                                    "PATCH /integrations/linear/{conversation_id}/tickets/{linear_id}",
+                                    "DELETE /integrations/linear/{conversation_id}/tickets/{linear_id}",
+
+                                    "GET /integrations/linear/{conversation_id}/tickets",
+                                    "POST /integrations/linear/{conversation_id}/tickets"
+                                ]
+                            },
+                            {
+                                "group": "Github",
+                                "pages": [
+                                    "GET /integrations/github/properties",
+                                    "POST /integrations/github/search",
+
+                                    "PUT /integrations/github/{conversation_id}/tickets/{ticket_id}",
+                                    "DELETE /integrations/github/{conversation_id}/tickets/{ticket_id}",
+
+                                    "GET /integrations/github/{conversation_id}/tickets",
+                                    "POST /integrations/github/{conversation_id}/tickets"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "Agents",
+                        "pages": [
+                            "GET /agents",
+                            "GET /agents/pending"
+                        ]
+                    },
+                    {
+                        "group": "Organization",
+                        "pages": [
+                            "GET /organization",
+                            "GET /organization/invoices",
+                            "PATCH /organization",
+                            "POST /organization/hours",
+                            {
+                                "group": "Channels",
+                                "pages": [
+                                    "GET /organization/channels",
+                                    "POST /organization/channels",
+                                    "PATCH /organization/channels/{email}",
+                                    "DELETE /organization/channels/{email}",
+                                    "GET /organization/channels/{email}/verify"
+                                ]
+                            },
+                            {
+                                "group": "Chat",
+                                "pages": [
+                                    "GET /organization/chat",
+                                    "PUT /organization/chat"
+                                ]
+                            },
+                            {
+                                "group": "Custom Data",
+                                "pages": [
+                                    "GET /organization/custom-data",
+                                    "PATCH /organization/custom-data",
+                                    "DELETE /organization/custom-data",
+                                    "GET /organization/custom-data/logs"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "Reporting",
+                        "pages": [
+                            "GET /reporting/general",
+                            "GET /reporting/knowledge/statistics",
+                            "GET /reporting/knowledge/searches",
+                            "GET /reporting/knowledge/articles",
+                            "GET /organization/rag/statistics"
+                        ]
+                    },
+                    {
+                        "group": "Snippets",
+                        "pages": [
+                            "GET /snippets",
+                            "POST /snippets",
+                            "PATCH /snippets/{id}",
+                            "DELETE /snippets/{id}",
+                            {
+                                "group": "Snippet Categories",
+                                "pages": [
+                                    "GET /snippets/categories",
+                                    "POST /snippets/categories",
+                                    "GET /snippets/categories/{id}",
+                                    "PATCH /snippets/categories/{id}",
+                                    "DELETE /snippets/categories/{id}",
+                                    "POST /snippets/{id}/categories",
+                                    "PATCH /snippets/categories/{id}/position"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "Rules",
+                        "pages": [
+                            "GET /organization/rules",
+                            "POST /organization/rules",
+                            "PATCH /organization/rules/{id}",
+                            "DELETE /organization/rules/{id}",
+                            "POST /organization/rules/{id}/enable",
+                            "POST /organization/rules/{id}/disable"
+                        ]
+                    },
+                    {
+                        "group": "Knowledge Base",
+                        "pages": [
+                            "GET /knowledge",
+                            "GET /knowledge/structure",
+                            "PATCH /knowledge",
+                            "GET /knowledge/verify",
+                            {
+                                "group": "Links",
+                                "pages": [
+                                    "GET /knowledge/links",
+                                    "POST /knowledge/links",
+                                    "PATCH /knowledge/links/{id}",
+                                    "DELETE /knowledge/links/{id}"
+                                ]
+                            },
+                            {
+                                "group": "Articles",
+                                "pages": [
+                                    "POST /knowledge/articles",
+                                    "GET /knowledge/articles/{id}",
+                                    "PATCH /knowledge/articles/{id}",
+                                    "DELETE /knowledge/articles/{id}",
+                                    "PATCH /knowledge/articles/{id}/collections"
+                                ]
+                            },
+                            {
+                                "group": "Collections",
+                                "pages": [
+                                    "GET /knowledge/collections",
+                                    "POST /knowledge/collections",
+                                    "PATCH /knowledge/collections/{id}",
+                                    "DELETE /knowledge/collections/{id}"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "group": "AI Data store",
+                        "pages": [
+                            "GET /organization/rag",
+                            "PATCH /organization/rag",
+                            {
+                                "group": "Sources",
+                                "pages": [
+                                    "DELETE /organization/rag/sources",
+
+                                    "DELETE /organization/rag/sources/{uuid}",
+                                    "POST /organization/rag/sources/{uuid}/retrain",
+                                    "GET /organization/rag/sources/{uuid}/content",
+
+                                    "POST /organization/rag/sources/files",
+
+                                    "POST /organization/rag/sources/texts",
+                                    "PATCH /organization/rag/sources/texts/{uuid}",
+
+                                    "POST /organization/rag/sources/urls",
+                                    "POST /organization/rag/sources/urls/stop",
+
+                                    "POST /organization/rag/sources/questions",
+                                    "PATCH /organization/rag/sources/questions/{message_id}",
+                                    "PATCH /organization/rag/sources/questions/{uuid}",
+
+                                    "POST /organization/rag/sources/retrain"
+                                ]
+                            }
                         ]
                     }
                 ]
