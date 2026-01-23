@@ -57,7 +57,6 @@
                             "GET /conversations/{id}/export",
                             "PATCH /conversations/{id}",
                             "POST /conversations/bulk",
-                            "POST /conversations/{id}/spam",
                             "DELETE /conversations/{id}",
                             {
                                 "group": "Messages",
