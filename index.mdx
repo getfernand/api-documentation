@@ -1,9 +1,7 @@
 ---
-title: "Getting started"
-description: "Welcome to the Fernand API documentation"
+title: "Fernand documentation"
+description: "The customer support tool for small B2B teams"
 ---
-
-Welcome to the Fernand API documentation. This guide will help you get started with integrating Fernand's API into your application.
 
 <CardGroup cols={2}>
   <Card
@@ -40,10 +38,56 @@ Welcome to the Fernand API documentation. This guide will help you get started w
 
 To get started with the Fernand API:
 
-1. **Get your API key** - Create an API key from your Fernand dashboard under **Integrations → API Key**
+1. **Get your API key** - Create an API key from your Fernand dashboard under Settings → Integrations → API Key
 2. **Make your first request** - Include your API key in the `X-Api-Key` header
-3. **Explore the API** - Check out our [OpenAPI specification](/docs/openapi) for all available endpoints
+3. **Explore the API** - Check our [OpenAPI specification](/docs/openapi) for all endpoints
 
-<Callout type="info">
+<Card
+  title="Listing conversations"
+  icon="list"
+  href="/api-reference/conversations/list-conversations"
+  arrow="true"
+  horizontal="true"
+>
+  Learn how to retrieve and list all conversations in your workspace.
+</Card>
+<Card
+  title="Searching conversations"
+  icon="magnifying-glass"
+  href="/api-reference/conversations/list-conversations#parameter-search"
+  arrow="true"
+  horizontal="true"
+>
+  Find specific conversations using search queries and filters.
+</Card>
+<Card
+  title="Getting conversation messages"
+  icon="file-text"
+  href="/api-reference/messages/list-messages-in-a-conversation"
+  arrow="true"
+  horizontal="true"
+>
+  Retrieve messages in a conversation.
+</Card>
+<Card
+  title="Writing a reply"
+  icon="envelope"
+  href="/api-reference/conversations/reply-to-conversation"
+  arrow="true"
+  horizontal="true"
+>
+  Learn how to send replies to conversations via the API.
+</Card>
+<Card
+  title="Writing a draft"
+  icon="pencil"
+  href="/api-reference/conversation-drafts/create-a-new-draft"
+  arrow="true"
+  horizontal="true"
+>
+  Learn how to create and save draft messages for conversations.
+</Card>
+
+<Note>
   Need help? Contact our support team at [support@getfernand.com](mailto:support@getfernand.com) or visit our [help center](https://help.getfernand.com).
-</Callout>
+</Note>
