@@ -51,13 +51,19 @@
                             "POST /conversations/compose",
 
                             "GET /conversations/{id}",
-                            "POST /conversations/{conv_id}/drafts",
                             "POST /conversations/{id}/reply",
 
                             "GET /conversations/{id}/export",
                             "PATCH /conversations/{id}",
                             "POST /conversations/bulk",
                             "DELETE /conversations/{id}",
+                            {
+                                "group": "Drafts",
+                                "pages": [
+                                    "POST /conversations/{conv_id}/drafts",
+                                    "DELETE /conversations/{conv_id}/drafts/{draft_id}"
+                                ]
+                            },
                             {
                                 "group": "Messages",
                                 "pages": [
