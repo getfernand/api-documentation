@@ -60,6 +60,7 @@
                             {
                                 "group": "Drafts",
                                 "pages": [
+                                    "GET /conversations/{conv_id}/drafts",
                                     "POST /conversations/{conv_id}/drafts",
                                     "DELETE /conversations/{conv_id}/drafts/{draft_id}"
                                 ]
